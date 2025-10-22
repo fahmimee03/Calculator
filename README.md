@@ -11,15 +11,14 @@ A modern calculator built with WPF and C#, featuring state machine architecture 
 🛡️ Error Handling - Division by zero protection with MessageBox alerts\
 📦 Modular Design - Separate UI and logic layers
 
-🚀 Quick Start\
+#### 🚀 Quick Start
 Prerequisites
-
-Visual Studio 2019+
-.NET Framework 4.7.2+
+Visual Studio 2019+,
+ .NET Framework 4.7.2+
 
 ## Installation
 ```
-bashgit clone https://github.com/fahmimee03/wpf-calculator.git 
+git clone https://github.com/fahmimee03/wpf-calculator.git 
 cd wpf-calculator
 #Open Learning.sln in Visual Studio
 #Press F5 to run
@@ -43,13 +42,13 @@ Learning/\
 EnteringFirstNumber → OperationSelected → EnteringSecondNumber → ResultDisplayed \
          ↑----------------------------------------------------------------------------------------↓ \
          └────────────────── (New Calculation) ───────────────────┘ \
-Why?\ 
-Prevents bugs like displaying "53" when user types 5 + 3 (should show "3"). \
+Why?
+Prevents bugs like displaying "53" when user types 5 + 3 (should show "3"). 
 #### Key Design Patterns
 
-- State Pattern - Manages calculator input flow \
-- Inheritance - Scientific/Programmer extend BasicCalculator \
-- Separation of Concerns - UI (WPF) ↔ Logic (DLL) \
+- State Pattern - Manages calculator input flow 
+- Inheritance - Scientific/Programmer extend BasicCalculator 
+- Separation of Concerns - UI (WPF) ↔ Logic (DLL) 
 - Event-Driven - Single event handler for multiple buttons
 
 ## 🤝 Contributing

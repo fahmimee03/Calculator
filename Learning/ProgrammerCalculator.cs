@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Learning
 {
-    internal class ProgrammerCalculator : BasicCalculator
+    public class ProgrammerCalculator : BasicCalculator
     {
         public ProgrammerCalculator() : base() { }
 
-        public override int Calculate() {
+        public override long Calculate() {
             switch (operation) {
                 case "AND":
                     return BitwiseAnd(firstNumber, secondNumber);
@@ -25,17 +25,17 @@ namespace Learning
 
         }
 
-        private int BitwiseAnd(int a, int b)
+        private long BitwiseAnd(long a, long b)
         {
             return a & b;
         }
 
-        private int BitwiseOr(int a, int b)
+        private long BitwiseOr(long a, long b)
         {
             return a | b;
         }
 
-        private int BitwiseXor(int a, int b)
+        private long BitwiseXor(long a, long b)
         {
             return a ^ b;
         }

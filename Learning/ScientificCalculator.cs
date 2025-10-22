@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Learning
 {
-    internal class ScientificCalculator : BasicCalculator
+    public class ScientificCalculator : BasicCalculator
     {
         public ScientificCalculator() : base() { }
 
-        public override int Calculate() {
+        public override long Calculate() {
             switch (operation)
             {
                 case "POW":
@@ -22,12 +22,12 @@ namespace Learning
             }
         }
 
-        private int Power(int baseNum, int exponent)
+        private long Power(long baseNum, long exponent)
         {
             return (int)Math.Pow(baseNum, exponent);
         }
 
-        private int Modulo(int a, int b)
+        private long Modulo(long a, long b)
         {
             if (b == 0)
             {

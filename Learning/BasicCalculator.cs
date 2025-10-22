@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Learning
 {
-    internal class BasicCalculator
+    public class BasicCalculator
     {
         //Protected fields - accessible by child classes
-        protected int firstNumber;
-        protected int secondNumber;
+        protected long firstNumber;
+        protected long secondNumber;
         protected string operation;
 
 
@@ -23,12 +23,12 @@ namespace Learning
         }
 
         //Setter
-        public void SetFirstNumber(int num) {
+        public void SetFirstNumber(long num) {
             firstNumber = num;
         
         }
 
-        public void SetSecondNumber(int num)
+        public void SetSecondNumber(long num)
         {
             secondNumber = num;
 
@@ -40,47 +40,49 @@ namespace Learning
         }
 
         //VIRTUAL method - can be overridden by child classes
-        public virtual int Calculate() {
+        public virtual long Calculate() {
             switch (operation)
             {
+                case "ADD":
                 case "+":
                     return Add(firstNumber, secondNumber);
+                case "SUBTRACT":
                 case "-":
                     return Subtract(firstNumber, secondNumber);
+                case "MULTIPLY":
                 case "*":
                     return Multiply(firstNumber, secondNumber);
+                case "DIVIDE":
                 case "/":
                     return Divide(firstNumber, secondNumber);
                 default:
-                    Console.WriteLine("invalid Operation!");
-                    return 0;
+                    throw new InvalidOperationException($"Invalid Operation: {operation}");
             }
 
         
         }
 
         //protected methods - accessible by child classes
-        protected int Add(int a, int b)
+        protected long Add(long a, long b)
         {
             return a + b;
         }
 
-        protected int Subtract(int a, int b)
+        protected long Subtract(long a, long b)
         {
             return a - b;
         }
 
-        protected int Multiply(int a, int b)
+        protected long Multiply(long a, long b)
         {
             return a * b;
         }
 
-        protected int Divide(int a, int b)
+        protected long Divide(long a, long b)
         {
             if(b == 0)
             {
-                Console.WriteLine("Cannot divide by zero!");
-                return 0;
+                throw new DivideByZeroException();
             }
             return a / b;
         }

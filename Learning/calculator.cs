@@ -10,8 +10,8 @@ namespace Learning
     internal class calculator
     {
         //ENCAPSULATION : PRIVATE FIELD (DATA) - HIDDEN FROM THE OUTSIDE... like package
-        private int firstNumber;
-        private int secondNumber;
+        private long firstNumber;
+        private long secondNumber;
         private string operation;
 
         //Constructor - runs when you create a new calculator
@@ -24,12 +24,12 @@ namespace Learning
         }
 
         //Public method - allows controlled access to set data
-        public void SetFirstNumber(int number) {
+        public void SetFirstNumber(long number) {
             firstNumber = number;
         
         }
 
-        public void SetSecondNumber(int number) {
+        public void SetSecondNumber(long number) {
 
             secondNumber = number;
         }
@@ -41,7 +41,7 @@ namespace Learning
         }
 
         //ABSTRACTION: simple method to hide complex logic
-        public int Calculate()
+        public long Calculate()
         {
             //Decide which operation to perform
             switch (operation) {
@@ -63,27 +63,27 @@ namespace Learning
         }
 
         //ABSTRACTION: Private helper methods (hide complexity)
-        private int Add(int a, int b)
+        private long Add(long a, long b)
         {
             return a + b;
         }
 
-        private int Subtract(int a, int b)
+        private long Subtract(long a, long b)
         {
             return a - b;
         }
 
-        private int BitwiseAnd(int a, int b)
+        private long BitwiseAnd(long a, long b)
         {
             return a & b;
         }
 
-        private int BitwiseOr(int a, int b)
+        private long BitwiseOr(long a, long b)
         {
             return a | b;
         }
 
-        private int BitwiseXor(int a, int b)
+        private long BitwiseXor(long a, long b)
         {
 
             return a ^ b;
@@ -91,7 +91,7 @@ namespace Learning
 
 
 
-        public int GetResult() {
+        public long GetResult() {
 
             return firstNumber;
         

@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Learning
 {
-    internal class NumberConverter
+    public class NumberConverter
     {
-        public string ToBinary(int number)
+        public string ToBinary(long number)
         {
             if (number == 0) return "0";
 
             string binary = "";
-            int temp = number;
+            long temp = number;
 
             //Handle negative numbers
             if (temp < 0)
@@ -24,7 +24,7 @@ namespace Learning
             }
             while (temp > 0)
             {
-                int remainder = temp % 2;
+                long remainder = temp % 2;
                 binary = remainder + binary;
                 temp = temp / 2;
             }
@@ -32,17 +32,17 @@ namespace Learning
             return binary;
         }
 
-        public string ToHexadecimal(int number) {
+        public string ToHexadecimal(long number) {
             if (number == 0) return "0";
 
             string hex = "";
-            int temp = Math.Abs(number);
+            long temp = Math.Abs(number);
             string hexChars = "0123456789ABCDEF";
 
             while (temp > 0)
             {
-                int remainder = temp % 16;
-                hex = hexChars[remainder] + hex;
+                long remainder = temp % 16;
+                hex = hexChars[(int)remainder] + hex;
                 temp = temp / 16;
             }
 
@@ -53,16 +53,16 @@ namespace Learning
 
         }
 
-        public string ToOctal(int number)
+        public string ToOctal(long number)
         {
             if (number ==0) return "0";
 
             string octal = "";
-            int temp = Math.Abs(number);
+            long temp = Math.Abs(number);
 
             while (temp > 0)
             {
-                int remainder = temp % 8;
+                long remainder = temp % 8;
                 octal = remainder + octal;
                 temp = temp / 8;
             }

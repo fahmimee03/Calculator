@@ -6,33 +6,83 @@ using System.Threading.Tasks;
 
 namespace Learning
 {
-    internal class Program
+    public class Program
     {
-        static void Main(string[] args)
+       /* static void Main(string[] args)
         {
 
-            //Flag to control the loop
-            bool continueLoop = true;
 
-            do
+            //INSTANTIATION: Create an object from the class
+            BasicCalculator calc;
+            NumberConverter converter = new NumberConverter();
+
+            while (true)
             {
-                //INSTANTIATION: Create an object from the class
-                BasicCalculator calc = new BasicCalculator();
-                NumberConverter converter = new NumberConverter();
+                Console.Clear();
+                Console.WriteLine("╔════════════════════════════════════╗");
+                Console.WriteLine("║     CALCULATOR MENU SYSTEM         ║");
+                Console.WriteLine("╠════════════════════════════════════╣");
+                Console.WriteLine("║ 1. Basic Calculator                ║");
+                Console.WriteLine("║ 2. Programmer's Calculator         ║");
+                Console.WriteLine("║ 3. Scientific Calculator           ║");
+                Console.WriteLine("║ 4. Exit                            ║");
+                Console.WriteLine("╚════════════════════════════════════╝");
+                Console.Write("\nChoose calculator type: ");
 
-                try
+                string choice = Console.ReadLine();
+                if (choice == "4")
                 {
-                    Console.WriteLine("Enter the first number \n");
+                    Console.WriteLine("\nThank you for using the calculator.");
+                    break;
+                }
 
+                switch (choice)
+                {
+                    case "1":
+                        calc = new BasicCalculator();
+                        Console.WriteLine("\nBasic Calculator selected");
+                        Console.WriteLine("Available Operation : + , - , * , /");
+                        break;
+                    case "2":
+                        calc = new ProgrammerCalculator();
+                        Console.WriteLine("\nProgrammer Calculator selected");
+                        Console.WriteLine("Available operations: + , - , * , / , AND , OR , XOR");
+                        break;
+                    case "3":
+                        calc = new ScientificCalculator();
+                        Console.WriteLine("\nScientific Calculator selected");
+                        Console.WriteLine("Available operations: + , - , * , / , POW , MOD");
+                        break;
+                    default:
+                        Console.WriteLine("invalid input! please try again.");
+                        Console.ReadKey();
+                        continue;
+                }
+
+                UseCalculator(calc, converter);
+
+                Console.WriteLine("\nPress any key to return to menu...");
+                Console.ReadKey();
+
+            }
+
+        }
+
+        static void UseCalculator(BasicCalculator calc, NumberConverter converter)
+        {
+            try
+            {
+                    Console.WriteLine("Enter the first number \n");
                     int num1 = int.Parse(Console.ReadLine());
                     calc.SetFirstNumber(num1);
 
 
 
                     //Get operation from the user
-                    Console.WriteLine("Enter the operation: ( +, -, *, /, AND, OR ,XOR): ");
+                    Console.WriteLine("Enter the operation: ");
                     string op = Console.ReadLine().ToUpper();
                     calc.SetOperation(op);
+
 
                     //Get second number from user
                     Console.WriteLine("Enter the second number \n");
@@ -44,34 +94,34 @@ namespace Learning
                     Console.WriteLine("\n╔════════════════════════════╗");
                     Console.WriteLine("║         RESULTS            ║");
                     Console.WriteLine("╠════════════════════════════╣");
-                    Console.WriteLine($"║Decimal:       {result, -13}║");
+                    Console.WriteLine($"║Decimal:       {result,-13}║");
                     Console.WriteLine($"║Binary:        {converter.ToBinary(result),-13}║");
                     Console.WriteLine($"║Hexadecimal:   {converter.ToHexadecimal(result),-13}║");
                     Console.WriteLine($"║Octal:         {converter.ToOctal(result),-13}║");
                     Console.WriteLine("╚════════════════════════════╝");
-                }catch (FormatException)
-                {
-                    Console.WriteLine("\nError: Please enter a valid numbers only!");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"\nUnexepected error: {ex.Message}");
-                }
-                Console.WriteLine("Press Enter to continue or any key to exit...");
-                ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("\nError: Please enter a valid numbers only!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"\nUnexepected error: {ex.Message}");
+            }
+            Console.WriteLine("Press Enter to continue or any key to exit...");
+            ConsoleKeyInfo keyInfo = Console.ReadKey(true);
 
-                if (keyInfo.Key != ConsoleKey.Enter)
-                {
-                    //set flag to false
-                    continueLoop = false;
-                    Console.WriteLine("\nExiting...");
-                }
-                else
-                {
-                    Console.Clear();
-                    Console.WriteLine("==Programmer Calculator==\n");
-                }
-            } while (continueLoop); 
-        }
+            if (keyInfo.Key != ConsoleKey.Enter)
+            {
+                //set flag to false
+                Console.WriteLine("\nExiting...");
+            }
+            else
+            {
+                Console.Clear();
+                Console.WriteLine("==Programmer Calculator==\n");
+            }
+        }*/
+
     }
 }
